@@ -25,10 +25,10 @@ def getWeather(canvas):
     current_time_utc = time.gmtime()  # Obtener la hora UTC actual
     current_time_local = time.localtime(
     time.mktime(current_time_utc) + timezone_offset)  # Convertir a la hora local de la ciudad
-    current_time_formatted = time.strftime('%I:%M:%S %p', current_time_local)  # Formatear la hora local
+    current_time_formatted = time.strftime('%I:%M %p', current_time_local)  # Formatear la hora local
 
     final_info = condition + "\n" + str(temp) + "°c"
-    final_data = "\n" + "Localidad: " + str(localidad) + "\n" + "Minima: " + str(min_temp) + "°C" + "\n" + "Maxima: " + str(max_temp) + "°C" +"\n" + "Presion: " + str(pressure) + "\n" +"Humedad: " + str(humidity) + "\n" + "Hora local: " + current_time_formatted
+    final_data = "\n" + "Localidad: " + str(localidad) + "\n" + "Minima: " + str(min_temp) + "°C" + "\n" + "Maxima: " + str(max_temp) + "°C" +"\n" + "Presion: " + str(pressure) + "\n" +"Humedad: " + str(humidity) + "\n" + "Hora: " + current_time_formatted
     label1.config(text = final_info)
     label2.config(text = final_data)
 
