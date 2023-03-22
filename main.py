@@ -50,5 +50,3 @@ label2 = tk.Label(canvas, text="", font=t, bg='#49A')
 label2.pack()
 canvas.mainloop()
 
-#c2916b4d85a2936c51635e99ef754acd
-#api.openweathermap.org/data/2.5/weather?q={city name}
