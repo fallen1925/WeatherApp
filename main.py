@@ -10,7 +10,7 @@ def getWeather(canvas):
     api = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=06c921750b9a82d8f5d1294e1586276f"
     json_data = r.get(api).json()
     localidad = json_data['name'] + '-' + json_data['sys']['country']
-    timezone_api = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=06c921750b9a82d8f5d1294e1586276f&units=metric"
+    timezone_api = api
     timezone_data = r.get(timezone_api).json()
     timezone_offset = timezone_data['timezone']  # Obtener el offset de la zona horaria en segundos
     condition = json_data['weather'][0]['main']
