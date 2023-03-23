@@ -2,12 +2,14 @@ import tkinter as tk
 import requests as r
 import time
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
 def getWeather(canvas):
     city = textField.get()
-    api = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=06c921750b9a82d8f5d1294e1586276f"
+    api_key = os.environ.get('API_KEY')
+    api = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
     json_data = r.get(api).json()
     localidad = json_data['name'] + '-' + json_data['sys']['country']
     timezone_api = api
@@ -33,7 +35,7 @@ def getWeather(canvas):
     label2.config(text = final_data)
 
 canvas = tk.Tk()
-canvas.geometry("600x500")
+canvas.geometry("900x800")
 canvas.title("Weather App")
 canvas.configure(bg='#49A')
 f = ('poppins', 15)
